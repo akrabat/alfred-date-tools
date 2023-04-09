@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.akrabat.alfred-date-tools</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>21BABBCA-C29D-4FAA-849D-3A14269B262B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6AB0269F-94C1-4D35-B8AD-4BB75214382C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6DA397A1-35EB-4411-8BB2-C3F721756EEA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F3DE79A-DE36-4E4E-802F-8F9BD2317DF9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Rob Allen</string>
+	<key>description</key>
+	<string>Useful date-related tools</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Date Tools</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6AB0269F-94C1-4D35-B8AD-4BB75214382C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:daynumber_keword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>day-number</string>
+				<key>subtext</key>
+				<string>Enter year</string>
+				<key>title</key>
+				<string>Day number</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>21BABBCA-C29D-4FAA-849D-3A14269B262B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6F3DE79A-DE36-4E4E-802F-8F9BD2317DF9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:isleapyear_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>is-leap-year</string>
+				<key>subtext</key>
+				<string>Enter year to check</string>
+				<key>title</key>
+				<string>Is leap year</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6DA397A1-35EB-4411-8BB2-C3F721756EEA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Alfred Date Tools
+
+Date related tools for use within [Alfred](https://alfredapp.com).
+
+## Day Number
+
+Type `dn` followed by a date to show the day number for a given date. This is a number between 1 and 366, so 1st Jan is *1*, 13 March 2023 is *72*, but 13 March 2024 is *73* as 2024 is a leap year.
+
+This is also a quick way to find out the day of the week for a given day.
+
+![Screenshot of Day Number](readme-assets/ss-daynumber.png)
+
+## Is Leap Year
+
+Type `isleapyear` followed by a year to see if that year is a leap year or not.
+
+![Screenshot of Is Leap Year](readme-assets/ss-isleapyear.png)
+
+
+# Dependencies
+
+This workflow depends on the GNU date utility found in [coreutils](https://formulae.brew.sh/formula/coreutils). The workflow assumes that the utility is named `gdate`.
+
+This can be installed using Homebrew: `brew install coreutils`</string>
+	<key>uidata</key>
+	<dict>
+		<key>21BABBCA-C29D-4FAA-849D-3A14269B262B</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>6AB0269F-94C1-4D35-B8AD-4BB75214382C</key>
+		<dict>
+			<key>xpos</key>
+			<real>220</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>6DA397A1-35EB-4411-8BB2-C3F721756EEA</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>6F3DE79A-DE36-4E4E-802F-8F9BD2317DF9</key>
+		<dict>
+			<key>xpos</key>
+			<real>220</real>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>dn</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keyword for day-number</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>daynumber_keword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>isleapyear</string>
+				<key>placeholder</key>
+				<string>year</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keyword for is-leap-year</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>isleapyear_keyword</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>0.9</string>
+	<key>webaddress</key>
+	<string>https://github.com/akrabat/alfred-date-tools</string>
+</dict>
+</plist>

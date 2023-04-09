@@ -1,0 +1,46 @@
+#!/usr/bin/env zsh
+
+function with_suffix {
+  number="$1"
+  case $number in
+    1?) echo "${number}th" ;;
+    *1) echo "${number}st" ;;
+    *2) echo "${number}nd" ;;
+    *3) echo "${number}rd" ;;
+    *)  echo "${number}th" ;;
+  esac
+}
+
+result=$(gdate -d "$1" +%-j)
+if [ $? -ne 0 ]; then
+  # print error result for Alfred
+  cat << EOT
+{
+  "items": [
+    {
+      "title": "Date argument is invalid"
+    }
+  ]
+}
+EOT
+  exit
+fi
+
+# pretty print date and result
+day=$(with_suffix $(gdate -d "$1" +%-e))
+date=$(gdate -d "$1" "+%A $day %B %Y")
+
+result_with_suffix=$(with_suffix $result)
+
+# print result for Alfred
+cat << EOT
+{
+  "items": [
+    {
+      "title": "$date is the $result_with_suffix day of the year",
+      "subtitle": "Press enter to paste or ⌘C to copy",
+      "arg": "$result"     
+    }
+  ]
+}
+EOT

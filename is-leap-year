@@ -1,0 +1,37 @@
+#!/usr/bin/env zsh
+
+query=${1:-$(gdate "+%-Y")}
+year=$(gdate -d "$query-01-01" "+%-Y")
+
+if [ $? -ne 0 ]; then
+  # print error result for Alfred
+  cat << EOT
+{
+  "items": [
+    {
+      "title": "$1 is not a year"
+    }
+  ]
+}
+EOT
+  exit
+fi
+
+
+message="$year is not a leap year"
+if [ $(gdate -d "$year-03-01" +%-j) -eq 61 ]; then
+    message="$year is a leap year"
+fi
+
+# print result for Alfred
+cat << EOT
+{
+  "items": [
+    {
+      "title": "$message",
+      "subtitle": "Press enter to paste or ⌘C to copy",
+      "arg": "$message"     
+    }
+  ]
+}
+EOT
