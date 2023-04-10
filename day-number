@@ -11,19 +11,34 @@ function with_suffix {
   esac
 }
 
-result=$(gdate -d "$1" +%-j)
-if [ $? -ne 0 ]; then
+function error {
   # print error result for Alfred
   cat << EOT
 {
   "items": [
     {
-      "title": "Date argument is invalid"
+      "title": "$1"
     }
   ]
 }
 EOT
   exit
+}
+
+query=${1:-"today"}
+
+# trim whitespace
+query=$(echo $query) 
+
+# basic check for validity: must be 8 characters if it's numbers only
+if [[ -z ${query//[0-9 ]/} && ${#query} -ne 8 ]] ; then
+  error "Date format is invalid"
+fi
+
+# find day number for this date
+result=$(gdate -d "$query" +%-j)
+if [ $? -ne 0 ]; then
+  error "Date cannot be parsed"
 fi
 
 # pretty print date and result
