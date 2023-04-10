@@ -284,7 +284,7 @@ This can be installed using Homebrew: `brew install coreutils`</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.9</string>
+	<string>0.9.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/akrabat/alfred-date-tools</string>
 </dict>
