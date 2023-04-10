@@ -1,15 +1,14 @@
 #!/usr/bin/env zsh
 
 query=${1:-$(gdate "+%-Y")}
-year=$(gdate -d "$query-01-01" "+%-Y")
 
-if [ $? -ne 0 ]; then
-  # print error result for Alfred
+# Ensure year containers only digits and is no more than 4 digits long
+if [[ -n ${query//[0-9]/} || ${#query} -gt 4 ]]; then
   cat << EOT
 {
   "items": [
     {
-      "title": "$1 is not a year"
+      "title": "$1 is invalid"
     }
   ]
 }
@@ -18,6 +17,10 @@ EOT
 fi
 
 
+# zero pad years with less than 4 digits
+query=$(printf "%04d" $query)
+
+# if 31 March of this year is the 61st day, then it's a leap year
 message="$year is not a leap year"
 if [ $(gdate -d "$year-03-01" +%-j) -eq 61 ]; then
     message="$year is a leap year"
