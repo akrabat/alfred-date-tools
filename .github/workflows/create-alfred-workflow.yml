@@ -1,0 +1,25 @@
+name: Create Alfred Workflow
+
+on:
+  push:
+    tags:
+      - '[0-9].*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Alfred workflow
+        id: builder
+        uses: almibarss/build-alfred-workflow@v1
+        with:
+          workflow_dir: .
+          exclude_patterns: '*.pyc *__pycache__/* .github'
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.builder.outputs.workflow_file }}
