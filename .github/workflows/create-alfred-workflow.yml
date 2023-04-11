@@ -17,7 +17,7 @@ jobs:
 
       - name: Build Alfred workflow
         id: builder
-        uses: almibarss/build-alfred-workflow@v1
+        uses: almibarss/build-alfred-workflow@v1.1
         with:
           workflow_dir: .
           exclude_patterns: '.github/* .git/* .gitignore'
@@ -25,4 +25,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          generate_release_notes: true
           files: ${{ steps.builder.outputs.workflow_file }}
