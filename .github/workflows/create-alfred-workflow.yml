@@ -20,7 +20,7 @@ jobs:
         uses: almibarss/build-alfred-workflow@v1
         with:
           workflow_dir: .
-          exclude_patterns: '.github/\* .git/\* .gitignore'
+          exclude_patterns: '.github/* .git/* .gitignore'
 
       - name: Release
         uses: softprops/action-gh-release@v1
