@@ -19,6 +19,12 @@ Type `isleapyear` followed by a year to see if that year is a leap year or not.
 
 ![Screenshot of Is Leap Year](readme-assets/ss-isleapyear.png)
 
+## Days Between
+
+Type `db` followed by two dates separated by a comma to display the number of days betwen them.
+
+![Screenshot of Days Between](readme-assets/ss-daysbetween.png)
+
 # Configuration
 
 The keywords used for Day Number and Is Leap Year are configurable on the Workflow's configuration page.

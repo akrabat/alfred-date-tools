@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E26120D4-818A-4DFE-BE46-262304AF65CB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>70937CD2-15B1-455F-B516-A5CDF76C8C98</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Rob Allen</string>
@@ -181,6 +194,74 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>70937CD2-15B1-455F-B516-A5CDF76C8C98</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:daysbetween_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>days-between</string>
+				<key>subtext</key>
+				<string>Enter two dates, separated by a comma.</string>
+				<key>title</key>
+				<string>Days between</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E26120D4-818A-4DFE-BE46-262304AF65CB</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Alfred Date Tools
@@ -201,6 +282,11 @@ Type `isleapyear` followed by a year to see if that year is a leap year or not.
 
 ![Screenshot of Is Leap Year](readme-assets/ss-isleapyear.png)
 
+## Days Between
+
+Type `db` followed by two dates separated by a comma to display the number of days betwen them.
+
+![Screenshot of Days Between](readme-assets/ss-daysbetween.png)
 
 # Dependencies
 
@@ -236,6 +322,20 @@ This can be installed using Homebrew: `brew install coreutils`</string>
 			<real>220</real>
 			<key>ypos</key>
 			<real>190</real>
+		</dict>
+		<key>70937CD2-15B1-455F-B516-A5CDF76C8C98</key>
+		<dict>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>E26120D4-818A-4DFE-BE46-262304AF65CB</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>330</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -282,11 +382,30 @@ This can be installed using Homebrew: `brew install coreutils`</string>
 			<key>variable</key>
 			<string>isleapyear_keyword</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>db</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keyword for days-between</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>daysbetween_keyword</string>
+		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>0.9.3</string>
+	<string>0.9.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/akrabat/alfred-date-tools</string>
 </dict>
